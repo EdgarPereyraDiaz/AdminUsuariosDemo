@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Inicio de Sesión";
+}
+@model IniciarSesion
+<center>
+    <div class="container">
+        <div class="fadeInDown sesion">
+            <div class="col-12">
+                <div id="sesionContenido">
+                    <div class="fadeIn first">
+                        <h4>Iniciar Sesi&oacute;n</h4>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <form asp-controller="Sesion" asp-action="IniciarSesion" method="post">
+                            <div class="form-group text-left fadeIn second">
+                                <label asp-for="Correo"></label>
+                                <input asp-for="Correo" class="form-control" />
+                                <span asp-validation-for="Correo" class="text-danger"></span>
+                            </div>
+                            <div class="form-group text-left fadeIn third">
+                                <label asp-for="Contraseña"></label>
+                                <input asp-for="Contraseña" class="form-control" />
+                                <span asp-validation-for="Contraseña" class="text-danger"></span>
+                            </div>
+                            <hr />
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-lg btn-success">Ingresar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+
+@* Validacion de campos *@
+@section scripts{
+    @await Html.PartialAsync("_ValidationScriptsPartial");
+}

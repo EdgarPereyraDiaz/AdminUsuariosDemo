@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+@model IEnumerable<AppUsuarios>
+@inject SignInManager<AppUsuarios> Sesion
+
+
+<div class="Contenido fadeIn second">
+    <h2>Bienvenido @User.Identity.Name</h2> <hr />
+    <h4> Sistema de administración para usuarios con dos roles como demostraci&oacute;n:</h4>
+    @switch (Sesion.IsSignedIn(User))
+    {
+        case true:
+            @if (User.IsInRole("Administrador"))
+            {
+                <ul>
+                    <li><h4> Actualmente cuentas con un rol de &quot;Administrador&quot;.</h4></li>
+                </ul>
+            }
+            else if (User.IsInRole("Usuario"))
+            {
+                <ul>
+                    <li><h4> Actualmente cuentas con un rol de &quot;Usuario&quot;.</h4></li>
+                </ul>
+            }
+            else
+            {
+                <ul>
+                    <li><h4> Actualmente no cuentas con un rol, contacta con el adminstrador para signarte uno.</h4></li>
+                </ul>
+            }
+            break;
+
+        case false:
+            <ul>
+                <li><h4> Para iniciar sesi&oacute;n debes estar registrado previamente.</h4></li>
+            </ul>
+            break;
+    }
+</div>

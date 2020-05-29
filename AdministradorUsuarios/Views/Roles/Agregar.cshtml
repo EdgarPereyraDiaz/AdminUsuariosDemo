@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Nuevo Rol";
+}
+@model string
+
+<h1 class="bg-info text-white bordeTitulo">Agregar rol</h1>
+<a asp-action="Index" class="btn btn-info">Regresar</a>
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+<form asp-action="Agregar" method="post">
+    <div class="Contenido">
+        <div class="form-group fadeIn first">
+            <div class="form-group">
+                <label for="name">Nombre del Rol:</label>
+                <input name="name" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-success">Agregar</button>
+        </div>
+    </div>
+</form>

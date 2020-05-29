@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Administrador de Usuarios";
+}
+@model IEnumerable<AppUsuarios>
+@inject SignInManager<AppUsuarios> Sesion
+
+@if (Sesion.IsSignedIn(User) && User.IsInRole("Administrador"))
+{
+    <h1 class="bg-info text-white bordeTitulo fadeIn first">Todos los usuarios</h1>
+    <a asp-action="Agregar" class="btn btn-success fadeIn first">Nuevo</a>
+}
+else
+{
+    <h1 class="bg-info text-white bordeTitulo fadeIn first">Edici&oacute;n de usuario @User.Identity.Name</h1>
+}
+
+<div class="Contenido">
+    <table class="table table-sm table-bordered fadeIn second">
+        @if (Sesion.IsSignedIn(User) && User.IsInRole("Administrador"))
+        {
+            @foreach (AppUsuarios usuario in Model)
+            {
+                <tr><th>Nombre</th><th>E-mail</th><th>Editar</th><th>Eliminar</th></tr>
+                <tr>
+                    <td>@usuario.UserName</td>
+                    <td>@usuario.Email</td>
+                    <td><a class="btn btn-sm btn-info" asp-action="Actualizar" asp-route-id="@usuario.Id">Actualizar</a></td>
+                    <td>
+                        <form asp-action="Eliminar" asp-route-id="@usuario.Id" method="post">
+                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Desea eliminar el usuario: @usuario.UserName')">Elminar</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+        else if (Sesion.IsSignedIn(User) && User.IsInRole("Usuario"))
+        {
+            @foreach (AppUsuarios usuario in Model)
+            {
+                @if (usuario.UserName == User.Identity.Name && User.Identity.IsAuthenticated)
+                {
+                    <tr><th>Nombre</th><th>E-mail</th><th>Editar</th></tr>
+                    <tr>
+                        <td>@usuario.UserName</td>
+                        <td>@usuario.Email</td>
+                        <td><a class="btn btn-sm btn-info" asp-action="Actualizar" asp-route-id="@usuario.Id">Actualizar</a></td>
+                    </tr>
+                }
+            }
+        }
+    </table>
+</div>
+
+
+
