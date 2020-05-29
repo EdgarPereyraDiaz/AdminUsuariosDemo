@@ -10,6 +10,7 @@ como una vista para administración de usuarios y otra para la administración d
 - [.NET Core](https://docs.microsoft.com/es-es/dotnet/core/about)
 - [Entity Frameworks](https://docs.microsoft.com/en-us/ef/core/)
 - [Sql Server](https://docs.microsoft.com/es-es/sql/tools/overview-sql-tools?view=sql-server-ver15)
+- [Bootstrap](https://getbootstrap.com/)
 
 ## Cómo utilizar el proyecto
 ### Instalación
@@ -57,8 +58,9 @@ del proyecto, al ejecutarlo insertara tres usuarios con sus respectivos roles.
 ```
 
 ### Paquetes NuGet instalados
-- Microsoft.EntityFrameworksCore (2.2.0)  
-- Microsoft.EntityFrameworksCore.SqlServer (2.2.0)
-- Microsoft.EntityFrameworksCore.Tools (2.2.0)
-- Serilog.Extensions.Logging.File (1.1.0)
-
+```
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.0">
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="1.1.0" />
+```
