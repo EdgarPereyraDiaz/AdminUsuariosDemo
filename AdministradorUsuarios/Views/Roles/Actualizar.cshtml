@@ -3,13 +3,13 @@
 }
 @model AdministradorUsuarios.Controllers.EditarRoles
 
-<h1 class="bg-info text-white bordeTitulo">Actualizar Roles</h1>
-<a asp-action="Index" class="btn btn-info">Regresar</a>
+<h1 class="bg-info text-white bordeTitulo fadeIn first">Actualizar Roles</h1>
+<a asp-action="Index" class="btn btn-info fadeIn first">Regresar</a>
 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
 <form method="post">
     <div class="Contenido">
-        <div class="form-group text-left fadeIn first">
+        <div class="form-group text-left fadeIn second">
             <input type="hidden" name="roleName" value="@Model.Role.Name" />
             <input type="hidden" name="roleId" value="@Model.Role.Id" />
 

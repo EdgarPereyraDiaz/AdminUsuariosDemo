@@ -3,13 +3,13 @@
 }
 @model string
 
-<h1 class="bg-info text-white bordeTitulo">Agregar rol</h1>
-<a asp-action="Index" class="btn btn-info">Regresar</a>
+<h1 class="bg-info text-white bordeTitulo fadeIn first">Agregar rol</h1>
+<a asp-action="Index" class="btn btn-info fadeIn first">Regresar</a>
 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
 <form asp-action="Agregar" method="post">
     <div class="Contenido">
-        <div class="form-group fadeIn first">
+        <div class="form-group fadeIn second">
             <div class="form-group">
                 <label for="name">Nombre del Rol:</label>
                 <input name="name" class="form-control" />
