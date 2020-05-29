@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\edgar\\Desktop\\AdministradorUsuarios\\AdministradorUsuarios\\AdministradorUsuarios.csproj": {}
+    "C:\\Users\\edgar\\Documents\\RepoGitHub\\AdminUsuariosDemo\\AdministradorUsuarios\\AdministradorUsuarios.csproj": {}
   },
   "projects": {
-    "C:\\Users\\edgar\\Desktop\\AdministradorUsuarios\\AdministradorUsuarios\\AdministradorUsuarios.csproj": {
+    "C:\\Users\\edgar\\Documents\\RepoGitHub\\AdminUsuariosDemo\\AdministradorUsuarios\\AdministradorUsuarios.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\edgar\\Desktop\\AdministradorUsuarios\\AdministradorUsuarios\\AdministradorUsuarios.csproj",
+        "projectUniqueName": "C:\\Users\\edgar\\Documents\\RepoGitHub\\AdminUsuariosDemo\\AdministradorUsuarios\\AdministradorUsuarios.csproj",
         "projectName": "AdministradorUsuarios",
-        "projectPath": "C:\\Users\\edgar\\Desktop\\AdministradorUsuarios\\AdministradorUsuarios\\AdministradorUsuarios.csproj",
+        "projectPath": "C:\\Users\\edgar\\Documents\\RepoGitHub\\AdminUsuariosDemo\\AdministradorUsuarios\\AdministradorUsuarios.csproj",
         "packagesPath": "C:\\Users\\edgar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\edgar\\Desktop\\AdministradorUsuarios\\AdministradorUsuarios\\obj\\",
+        "outputPath": "C:\\Users\\edgar\\Documents\\RepoGitHub\\AdminUsuariosDemo\\AdministradorUsuarios\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
