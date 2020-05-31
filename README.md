@@ -79,12 +79,14 @@ de errores del sistema, inicio de sesión de usuarios, eliminacion de roles y el
   _logger.LogInformation(Sesion.Correo + " inició sesión");
 ```
 
-- Designado para mostrar solo errores del sistema.
+- Designado para mostrar errores del sistema.
 ```
   {
     "Logging": {
-      "LogLevel": {
-        "Default": "Warning"
+    "LogLevel": {
+      "Default": "Debug",
+      "System": "Error",
+      "Microsoft": "Error"
       }
   }
 ```
