@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\AdministradorUsuarios"
   ],
+  "SelectedNode": "\\AdministradorUsuarios\\Startup.cs",
   "PreviewInSolutionExplorer": false
 }
