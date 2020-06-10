@@ -1,0 +1,1 @@
+2020-06-03T15:06:42.7198477-05:00 8000000d-0002-fb00-b63f-84710c7967bb [INF] admin@software.mx inició sesión (60cdf206)

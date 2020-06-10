@@ -30,6 +30,12 @@ namespace AdministradorUsuarios.Controllers
         }
 
         [AllowAnonymous]
+        public IActionResult AccesoDenegado()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
         public IActionResult IniciarSesion(string Url)
         {
             IniciarSesion login = new IniciarSesion

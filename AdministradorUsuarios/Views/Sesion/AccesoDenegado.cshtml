@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Acceso denegado";
+}
+@inject SignInManager<AppUsuarios> Sesion;
+<center>
+    <div class="container">
+        <div class="fadeInDown sesion">
+            <div class="col-12">
+                <div id="sesionContenido">
+                    <div class="fadeIn first">
+                        <h3>Acceso denegado</h3>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        @if (Sesion.IsSignedIn(User))
+                        {
+                            <form asp-controller="Inicio" asp-action="Index" method="post">
+                                <h5>No tienes permitido entrar a &eacute;sta secci&oacute;n</h5>
+                                <hr />
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-lg btn-success">Aceptar</button>
+                                </div>
+                            </form>
+                        }
+                        else
+                        {
+                            <form asp-controller="Sesion" asp-action="IniciarSesion" method="post">
+                                <h5>Tu sesi&oacute;n ha caducado</h5>
+                                <hr />
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-lg btn-success">Aceptar</button>
+                                </div>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>

@@ -24,17 +24,12 @@ namespace AdministradorUsuarios
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<CookiePolicyOptions>(options =>
-            {
-                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDbContext<UsuariosDbContext>(opciones =>
-                opciones.UseSqlServer(Configuration.GetConnectionString("ConexionLocalUsuarios")));
+                opciones.UseSqlServer(Configuration.GetConnectionString("ConexionLocalUsuarios"))
+                );
+
             services.AddIdentity<AppUsuarios, IdentityRole>(opciones =>
             {
                 //opciones politicas correo y contraseña
@@ -47,6 +42,16 @@ namespace AdministradorUsuarios
             })  .AddEntityFrameworkStores<UsuariosDbContext>()
                 .AddDefaultTokenProviders()
                 .AddErrorDescriber<DescripcionErrores>();
+
+            services.ConfigureApplicationCookie(opciones =>
+            {
+                opciones.Cookie.HttpOnly = true;
+                opciones.LoginPath = "/Sesion/AccesoDenegado";
+                opciones.LogoutPath = "/Sesion/SesionCerrada";
+                opciones.AccessDeniedPath = "/Sesion/AccesoDenegado";
+                opciones.SlidingExpiration = true;
+                opciones.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,7 +64,6 @@ namespace AdministradorUsuarios
 
             app.UseStaticFiles();
             app.UseAuthentication();
-            app.UseCookiePolicy();
 
             app.UseMvc(routes =>
             {

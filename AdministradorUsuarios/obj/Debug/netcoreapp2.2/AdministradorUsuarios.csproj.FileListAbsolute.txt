@@ -78,3 +78,5 @@ C:\Users\edgar\Documents\RepoGitHub\AdminUsuariosDemo\AdministradorUsuarios\obj\
 C:\Users\edgar\Documents\RepoGitHub\AdminUsuariosDemo\AdministradorUsuarios\obj\Debug\netcoreapp2.2\AdministradorUsuarios.pdb
 C:\Users\edgar\Documents\RepoGitHub\AdminUsuariosDemo\AdministradorUsuarios\obj\Debug\netcoreapp2.2\AdministradorUsuarios.genruntimeconfig.cache
 C:\Users\edgar\Documents\RepoGitHub\AdminUsuariosDemo\AdministradorUsuarios\obj\Debug\netcoreapp2.2\AdministradorUsuarios.csproj.CopyComplete
+C:\Users\edgar\Documents\RepoGitHub\AdminUsuariosDemo\AdministradorUsuarios\obj\Debug\netcoreapp2.2\Razor\Views\vacia.cshtml.g.cs
+C:\Users\edgar\Documents\RepoGitHub\AdminUsuariosDemo\AdministradorUsuarios\obj\Debug\netcoreapp2.2\Razor\Views\Sesion\AccesoDenegado.cshtml.g.cs
