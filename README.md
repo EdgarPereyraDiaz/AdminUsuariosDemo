@@ -57,6 +57,40 @@ del proyecto, al ejecutarlo insertara tres usuarios con sus respectivos roles.
     /Publicable/
 ```
 
+### Generación de logs
+Dentro del proyecto y del publicable se genera una carpeta con archivos Logs{date}.txt para seguimiento  
+de errores del sistema, inicio de sesión de usuarios, eliminacion de roles y eliminación de usuarios.
+
+- Carpeta contenedora de logs desde startup.
+```
+ public void Configure(
+            IApplicationBuilder app,
+            IHostingEnvironment env,
+            ILoggerFactory LoggerFactory)
+          {
+            LoggerFactory.AddFile(env.ContentRootPath + "/Logs/log-{Date}.txt");
+            ...
+```
+
+- Implementado en los controladores.
+```
+  private readonly ILogger _logger;
+  ...
+  _logger.LogInformation(Sesion.Correo + " inició sesión");
+```
+
+- Designado para mostrar errores del sistema.
+```
+  {
+    "Logging": {
+    "LogLevel": {
+      "Default": "Debug",
+      "System": "Error",
+      "Microsoft": "Error"
+      }
+  }
+```
+
 ### Paquetes NuGet instalados
 ```
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.0" />
