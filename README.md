@@ -1,7 +1,7 @@
 # Administración de Usuarios DEMO
 ## Descripción
 Sistema para la administración de usuarios, con roles para acceso a las diferentes vistas.  
-Sontiene una vista de inicio para todos los usuario incluso usuarios no registrados, así  
+Contiene una vista de inicio para todos los usuario incluso usuarios no registrados, así  
 como una vista para administración de usuarios y otra para la administración de roles.
 
 #### Tecnologias utilizadas:
@@ -23,7 +23,11 @@ del proyecto, al ejecutarlo insertara tres usuarios con sus respectivos roles.
     /ScriptSQLServer_UsuariosDB.sql
   ```
 
-2. En un inicio se cuenta con tres usuarios para iniciar sesión y con dos roles (rol Administrador y rol Usuario):  
+2. En un inicio se cuenta con cuatro usuarios para iniciar sesión y con tres roles (rol Administrador, rol Root y rol Usuario):  
+ - Usuario con rol de Root; acceso total, es un usuario/rol default para crear más usuarios, se niega su edición y eliminación.  
+  E-mail: root@software.mx  
+  Contraseña: 89Root#  
+  
  - Usuario con rol de administrador; acceso a inicio general, administrador de usuarios y administrador de roles (Acceso total).  
   E-mail: admin@software.mx  
   Contraseña: 89Adm#  
@@ -98,3 +102,18 @@ de errores del sistema, inicio de sesión de usuarios, eliminacion de roles y el
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.0">
     <PackageReference Include="Serilog.Extensions.Logging.File" Version="1.1.0" />
 ```
+
+### Notas
+Cuenta con una limitante de sesión de 30 minutos desde que el usuario inició sesión, así como redireccionamientos desde startup.  
+```
+    services.ConfigureApplicationCookie(opciones =>
+    {
+         opciones.Cookie.HttpOnly = true;
+         opciones.LoginPath = "/Sesion/AccesoDenegado";
+         opciones.LogoutPath = "/Sesion/SesionCerrada";
+         opciones.AccessDeniedPath = "/Sesion/AccesoDenegado";
+         opciones.SlidingExpiration = true;
+         opciones.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+     });
+```
+
