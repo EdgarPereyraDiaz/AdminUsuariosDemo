@@ -10,7 +10,7 @@ namespace AdministradorUsuarios.Controllers
     /// <summary>
     /// Controlador para la administración de usuarios; editar, actualizar o eliminar
     /// </summary>
-    [Authorize(Roles = "Usuario, Administrador")]
+    [Authorize(Roles = "Usuario, Administrador, Root")]
     public class AdminController : Controller
     {
         private readonly ILogger _logger;

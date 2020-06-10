@@ -10,7 +10,7 @@ namespace AdministradorUsuarios.Controllers
     /// <summary>
     /// Controlador para el inicio de sesión de los usuarios
     /// </summary>
-    [Authorize(Roles = "Administrador, Usuario")]
+    [Authorize(Roles = "Administrador, Usuario, Root")]
     public class SesionController : Controller
     {
         private readonly ILogger _logger;

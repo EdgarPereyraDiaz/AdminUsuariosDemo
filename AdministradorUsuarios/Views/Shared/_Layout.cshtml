@@ -28,7 +28,7 @@
                     <li class="nav-item">
                         <a class="btn btn-info btnCabecera text-white" asp-area="" asp-controller="Inicio" asp-action="Index">Inicio</a>
                     </li>
-                    @if (Sesion.IsSignedIn(User) && User.IsInRole("Administrador"))
+                    @if (Sesion.IsSignedIn(User) && (User.IsInRole("Administrador") || User.IsInRole("Root")))
                     {
                         <li class="nav-item">
                             <a class="btn btn-info btnCabecera text-white" asp-area="" asp-controller="Admin" asp-action="Index">Administrador de usuarios</a>
@@ -43,6 +43,7 @@
                             <a class="btn btn-info btnCabecera text-white" asp-area="" asp-controller="Admin" asp-action="Index">Administrador de usuarios</a>
                         </li>
                     }
+
                     <li class="nav-item">
                         <a class="btn btn-info btnCabecera text-white" asp-area="" asp-controller="Sesion" asp-action="CerrarSesion">Cerrar sesi&oacute;n @User.Identity.Name</a>
                     </li>

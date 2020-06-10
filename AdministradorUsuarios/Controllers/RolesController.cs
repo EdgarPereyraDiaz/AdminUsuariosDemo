@@ -12,7 +12,7 @@ namespace AdministradorUsuarios.Controllers
     /// <summary>
     /// Controlador para la administración de roles; crear, actualizar o eliminar
     /// </summary>
-    [Authorize(Roles = "Administrador")]
+    [Authorize(Roles = "Administrador, Root")]
     public class RolesController : Controller
     {
         private readonly ILogger _Logger;
